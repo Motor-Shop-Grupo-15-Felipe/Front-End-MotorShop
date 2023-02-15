@@ -1,0 +1,42 @@
+Arguments: 
+  C:\Program Files\nodejs\node.exe C:\Users\gabri\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js add …
+
+PATH: 
+  C:\Users\gabri\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\local\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\gabri\bin;C:\ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0;C:\Windows\System32\OpenSSH;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0;C:\WINDOWS\System32\OpenSSH;C:\Program Files\Git\cmd;C:\Program Files\dotnet;C:\Program Files\nodejs;C:\Program Files\Docker\Docker\resources\bin;C:\ProgramData\DockerDesktop\version-bin;C:\Users\gabri\AppData\Local\Programs\Python\Python311\Scripts;C:\Users\gabri\AppData\Local\Programs\Python\Python311;C:\Users\gabri\AppData\Local\Microsoft\WindowsApps;C:\Users\gabri\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\heroku\bin;C:\Users\gabri\AppData\Roaming\npm;C:\Program Files\PostgreSQL\14\bin;C:\Program Files\Git\usr\bin\vendor_perl;C:\Program Files\Git\usr\bin\core_perl
+
+Yarn version: 
+  1.22.19
+
+Node version: 
+  16.17.0
+
+Platform: 
+  win32 x64
+
+Trace: 
+  TypeError [ERR_UNESCAPED_CHARACTERS]: https://registry.yarnpkg.com/…: Request path contains unescaped characters
+      at new NodeError (node:internal/errors:387:5)
+      at new ClientRequest (node:_http_client:173:13)
+      at Object.request (node:https:357:10)
+      at Request.module.exports.Request.start (C:\Users\gabri\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:141452:32)
+      at Request.module.exports.Request.end (C:\Users\gabri\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:142211:10)
+      at end (C:\Users\gabri\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:141265:14)
+      at Immediate.<anonymous> (C:\Users\gabri\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:141279:7)
+      at processImmediate (node:internal/timers:466:21)
+
+npm manifest: 
+  {
+    "dependencies": {
+      "@types/jest": "^29.4.0",
+      "@types/node": "^18.13.0",
+      "@types/react": "^18.0.28",
+      "@types/react-dom": "^18.0.11",
+      "typescript": "^4.9.5"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
