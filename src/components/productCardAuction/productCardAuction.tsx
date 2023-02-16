@@ -14,17 +14,20 @@ import {
   TitleVehicle,
   Traits,
   RedirectAuction,
+  TimeAuction,
   BtnAuction,
+  
 } from "./productCardAuction.style";
+
 
 export const ProductCardAuction = () => {
   return (
     <>
       <ProductCardStyle className="product-card-auction">
         <ProductAuction>
-          <span className="time-to-auction">
-            <BiTimeFive /> 01:58:00
-          </span>
+          <TimeAuction className="time-to-auction">
+            <BiTimeFive color="blue" size={"1rem"}/> 01:58:00
+          </TimeAuction>
 
           <TitleVehicle className="title-car">Lamborghini</TitleVehicle>
 

@@ -2,35 +2,49 @@ import { styled } from "@stitches/react";
 import { colors } from "../../styles/Global";
 
 export const ProductCardStyle = styled("section", {
-  width: "30rem",
+  width: "40rem",
   display: "flex",
   flexDirection: "column",
-  borderRadius: "4px",
+
+  margin: "1rem",
 });
 
 export const ProductAuction = styled("div", {
-  background: `linear-gradient(180deg, rgba(0, 0, 0, 0.19) 0%, #000000 100%)`,
+  background: `linear-gradient(180deg, rgba(0, 0, 0, 0.19) 0%, $grey0 100%)`,
   backgroundSize: "cover",
-
+  width: "100%",
   display: "flex",
   gap: "8px",
   alignItems: "flex-start",
   flexDirection: "column",
   padding: "1rem",
-  color: "#FFF",
+  color: "$whiteFixed",
+});
+
+export const TimeAuction = styled("span", {
+  display: "flex",
+  alignItems: "center",
+  gap: "0.5rem",
+  padding: "0.5rem",
+  background: "$whiteFixed",
+  color: "$grey0",
+  borderRadius: "2rem",
+  fontWeight: "bolder",
+  fontSize: "0.75rem",
+  marginBottom: "4rem",
 });
 
 export const ImageVehicle = styled("img", {
   width: "18rem",
   height: "7.5rem",
-  backgroundColor: `${colors.color.grey7.color}`,
+  backgroundColor: "$grey7",
 });
 
 export const TitleVehicle = styled("h2", {
   fontSize: "16px",
   lineHeight: "20px",
   fontWeight: "600",
-  color: `${colors.color.grey1.color}`,
+  color: "$grey1",
 });
 
 export const DescriptionVehicle = styled("span", {
@@ -63,8 +77,8 @@ export const Characteristics = styled("span", {
   display: "flex",
   justifyContent: "center",
   alignItems: "center",
-  backgroundColor: `#EDEAFD`,
-  color: `#4529E6`,
+  backgroundColor: "$brand4",
+  color: "$brand1",
   fontWeight: "500",
   fontSize: "14px",
   borderRadius: "5px",
@@ -75,20 +89,20 @@ export const Price = styled("span", {
 });
 
 export const RedirectAuction = styled("div", {
-  width: "28rem",
-  background: "#4529E6",
+  width: "100%",
+  background: "$brand1",
   display: "flex",
   padding: "1rem",
   justifyContent: "space-between",
   alignItems: "center",
 
-  color: "#FFF",
+  color: "$whiteFixed",
 });
 
 export const BtnAuction = styled("button", {
   border: "none",
   background: "none",
-  color: "#FFF",
-  fontSize: "16px",
+  color: "$whiteFixed",
+  fontSize: "1rem",
   cursor: "pointer",
 });

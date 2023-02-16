@@ -7,7 +7,6 @@ export const Header = styled("header", {
     display: "flex",
     justifyContent: "space-between",
     margin: "0 2rem",  
-
 })
 
 export const Navigation = styled("nav", {
@@ -21,28 +20,25 @@ export const Categories = styled("ul", {
     display: "flex",
     alignItems: "center",
     listStyle: "none",
-    margin: "0 4rem",
-    padding: "1rem 1rem",
+    padding: "0 1rem",
     gap: "0.7rem",
 })
 
 export const Link = styled("a", {
     textDecoration: "none",
-    color: Color.grey0.color,
-
+    color: "$grey0"
 })
 
 
 export const Division = styled("hr", {
     transform: "rotate(90deg)",
     width: "100%",
-    color: `${Color.grey6.color}`
+    color: "$grey6"
 })
 
 export const Sections = styled("div", {
     display: "flex", 
     gap: "0.5rem",
-
 })
 
 
