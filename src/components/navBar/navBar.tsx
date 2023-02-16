@@ -1,5 +1,7 @@
 import logo from "../../assets/logo-main.svg"
-import { Header } from "./navBar.style";
+import {
+  Header, Navigation, Categories, Link, Sections, Division
+} from "./navBar.style";
 
 export const NavBar = (props: any) => {
 
@@ -10,29 +12,45 @@ export const NavBar = (props: any) => {
       <Header>
         <img className="logo" src={logo} alt="" />
 
-        <nav>
+        <Navigation>
           <div className="categories">
-            <ul>
-              <li className="cars"></li>
-              <li className="motorcycles"></li>
-              <li className="auctions"></li>
-            </ul>
+            <Categories>
+              <li className="cars">
+
+                <Link href="#cars">Carros</Link>
+                
+                </li>
+              <li className="motorcycles">
+
+                <Link href="#motos">Motos</Link>
+
+                </li>
+              <li className="auctions">
+
+                <Link href="#auctions">Leilões</Link>
+
+              </li>
+
+              <Division/>
+              
+                <Sections className="section">
+                  {isLoggedIn ? (
+                    <>
+                      <img className="image-user" src="" alt="" />
+                      <span className="username">Gustavo</span>
+                    </>
+                  ) : (
+                    <>
+                      <button className="login"> Fazer login</button>
+                      <button className="register"> Cadastrar</button>
+                    </>
+                  )}
+                </Sections>
+            </Categories>
           </div>
 
-          <div className="section">
-            {isLoggedIn ? (
-              <>
-                <img className="image-user" src="" alt="" />
-                <span className="username"></span>
-              </>
-            ) : (
-              <>
-                <button className="login"> Fazer login</button>
-                <button className="register"> Cadastrar</button>
-              </>
-            )}
-          </div>
-        </nav>
+
+        </Navigation>
       </Header>
     </>
   );

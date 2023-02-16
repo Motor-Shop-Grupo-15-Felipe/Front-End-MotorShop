@@ -10,7 +10,7 @@ function App() {
   return (
     <div className="App">
 
-      <NavBar isLoggedIn='true' />
+      <NavBar />
       <ProductCard />
       <ProductCardAuction />
       <Footer />

@@ -1,34 +1,59 @@
+
+import user from "../../assets/user.svg";
+
+import { BiTimeFive } from "react-icons/bi";
+import { BsArrowRight } from "react-icons/bs";
+import {
+  ProductCardStyle,
+  ProductAuction,
+  Characteristics,
+  DescriptionVehicle,
+  InfoOwnerVehicle,
+  InfoVehicle,
+  Price,
+  TitleVehicle,
+  Traits,
+  RedirectAuction,
+  BtnAuction,
+} from "./productCardAuction.style";
+
 export const ProductCardAuction = () => {
-    return (
-        <>
-            <section className="product-card-auction">
+  return (
+    <>
+      <ProductCardStyle className="product-card-auction">
+        <ProductAuction>
+          <span className="time-to-auction">
+            <BiTimeFive /> 01:58:00
+          </span>
 
-                <span className="time-to-auction"></span>
-                
-                <h2 className="title-car">Loreem</h2>
+          <TitleVehicle className="title-car">Lamborghini</TitleVehicle>
 
-                <span className="description-car">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores veritatis necessitatibus facilis aspernatur.</span>
+          <DescriptionVehicle className="description-car">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores
+            veritatis necessitatibus facilis aspernatur.
+          </DescriptionVehicle>
 
-                <div className="user-info">
-                    <img className="image-user" src="" alt="" />
+          <InfoOwnerVehicle className="user-info">
+            <img className="image-user" src={user} alt="" />
 
-                    <span className="username"></span>
-                </div>
+            <span className="username">Gabriella</span>
+          </InfoOwnerVehicle>
 
-                <div className="car-info">
-                    <div>
-                        <span className="age-car"></span>
-                        <span className="mileaste-car"></span>
-                    </div>
+          <InfoVehicle className="car-info">
+            <Traits>
+              <Characteristics className="age-car">2023</Characteristics>
+              <Characteristics className="mileaste-car">0KM</Characteristics>
+            </Traits>
 
-                    <span className="price-car"></span>
+            <Price className="price-car">R$ 500.000,00</Price>
+          </InfoVehicle>
+        </ProductAuction>
 
-                </div>
-
-                <button className="redirect-auction-page">Acessar página do leilão</button>
-
-                
-        </section>
-        </>
-    )
-}
+        <RedirectAuction className="redirect-auction-page">
+          <BtnAuction className="redirect">Acessar página do leilão</BtnAuction>
+          <BsArrowRight cursor={"pointer"} size={"20px"} />
+        </RedirectAuction>
+      </ProductCardStyle>
+    </>
+  );
+};
