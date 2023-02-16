@@ -1,24 +1,25 @@
 import { styled } from "@stitches/react"
 import { colors } from "../../styles/Global"
 
-const Color = colors.color
 
 export const FooterPage = styled("footer", {
-    backgroundColor: `#0B0D0D`,
+    backgroundColor: "$grey0",
     display: "flex",
-    justifyContent: "space-between",
+    justifyContent: "space-around",
     alignItems: "center",
-    padding: "2rem 3.75rem",
-    color: `#FFF`,
+    padding: "2rem",
+    color: "$whiteFixed",
     fontSize: "12px",
 })
 
 export const BtnTop = styled("button", {
-    color: `#FFF`,
-    fontSize: "16px",
+    color: "$whiteFixed",
+    fontSize: "1rem",
     fontWeight: "bolder",
-    padding: "3.4 rem",
-    backgroundColor: `${Color.grey1.color}`,
+    width: "2rem",
+    height: "2rem",
+    background: "$grey2",
     border: "none",
+    borderRadius: "0.25rem",
     cursor: "pointer"
 })

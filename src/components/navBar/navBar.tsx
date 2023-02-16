@@ -1,4 +1,5 @@
 import logo from "../../assets/logo-main.svg"
+import { Button } from "../../styles/Buttons";
 import {
   Header, Navigation, Categories, Link, Sections, Division
 } from "./navBar.style";
@@ -41,8 +42,8 @@ export const NavBar = (props: any) => {
                     </>
                   ) : (
                     <>
-                      <button className="login"> Fazer login</button>
-                      <button className="register"> Cadastrar</button>
+                      <Button type={"btnLink"} className="login"> Fazer login</Button>
+                      <Button type={"btnOutline2"} className="register"> Cadastrar</Button>
                     </>
                   )}
                 </Sections>

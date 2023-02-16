@@ -7,7 +7,9 @@ export const ProductCard = () => {
     <>
         <ProductCardStyle>
                 
-            <ImageVehicle className="image-vehicle" src={car} alt="" />
+            <div>
+                <ImageVehicle className="image-vehicle" src={car} alt="" />
+            </div>
             <TitleVehicle className="title-vehicle"> Carro vermelho </TitleVehicle>
             <DescriptionVehicle className="description-vehicle">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consectetur perspiciatis cum quasi ullam dignissimos, nemo amet quaerat.</DescriptionVehicle>
 
