@@ -214,33 +214,50 @@ export const GlobalStyle = ({ children }: GlobalStyleProps): JSX.Element => {
         sectionMobile: "4rem",
       },
       fonts: {
-        titles: '"IBM Plex Sans", sans-serif;',
-        texts: '"Inter", sans-serif',
+        titles: '"Lexend", sans-serif;"',
+        texts: '"Inter", sans-serif;',
       },
       fontSizes: {
-        title1: "2.75rem",
-        title2: "1.75rem",
-        title3: "1.50rem",
-        title4: "1.25rem",
-        text1: "1rem",
-        text2: "0.875rem",
+        size1: "2.75rem",
+        size2: "2.25rem",
+        size3: "2rem",
+        size4: "1.75rem",
+        size5: "1.5rem",
+        size6: "1.25rem",
+        size7: "1rem",
+        size8: "0.875rem",
+
+      
       
         // Mobile
-        title1Mobile: "$title2",
-        title2Mobile: "$title3",
+        size1Mobile: "$size2",
+        size2Mobile: "$size3",
       },
       lineHeights: {
-        title1: "3.8rem",
-        title2: "2.75rem",
-        title3: "2.5rem",
-        title4: "1.25rem",
-        text1: "1.75rem",
-        text2: "1.75rem",
+        lineHeight1: "3.5rem",
+        lineHeight2: "2.813rem",
+        lineHeight3: "2.5rem",
+        lineHeight4: "2.188rem",
+        lineHeight5: "1.875rem",
+        lineHeight6: "1.563rem",
+        lineHeight7: "1.25rem",
+
+        bodyHeight1: "1.75rem",
+        bodyHeight2: "1.5rem",
+
+        buttonHeight1: "0rem",
+        
+        inputHeight1:"0rem",
+        inputHeight2:"1.063rem",
+        
   
         // Mobile
-        title1Mobile: "$title2",
-        title2Mobile: "$title3",
+        title1Mobile: "$lineHeight2",
+        title2Mobile: "$lineHeight3",
       },
+     
+
+      
       radii: {
         1: "0.5rem",
         2: "0.25rem",
