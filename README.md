@@ -20,7 +20,7 @@
 - [jwt-decode](https://jwt.io/)
 
 <h2> Getting Started with Create React App</h2>
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app/).
 
 ## CLONING THE REPOSITORY:
 - copy the SSH key above
