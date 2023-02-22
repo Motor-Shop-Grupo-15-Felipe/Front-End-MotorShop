@@ -2,11 +2,11 @@
 # Motor-shop
 
 
-### VERCEL DEPLOY:
+#### VERCEL DEPLOY:
 - [LINK]()
-### FIGMA:
+#### FIGMA:
 - [LINK](https://www.figma.com/file/gEUjTK4ozBPNbJnqI8qZPH/M6---E-Commerce?node-id=98%3A558&t=sT3EXyHtiUl3cs1L-1/)
-### API:
+#### API:
 - [LINK]()
 
 ## MAIN TECNOLOGIES AND REACT LIBRARIES:
