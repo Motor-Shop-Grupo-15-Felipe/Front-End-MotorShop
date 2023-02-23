@@ -1,4 +1,4 @@
-import image from "../../assets/logo-footer.svg";
+import image from "../../assets/react.svg";
 import { FooterPage, BtnTop } from "./footer.style";
 import { SlArrowUp } from "react-icons/sl";
 
