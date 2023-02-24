@@ -11,8 +11,8 @@ function App() {
     <div className="App">
 
       <NavBar />
-      <ProductCard />
       <ProductCardAuction />
+      <ProductCard />
       <Footer />
       
     </div>
