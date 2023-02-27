@@ -11,7 +11,7 @@ import {
   } from '@chakra-ui/react'
   import { AiOutlineClose } from 'react-icons/ai'
   import { Flex } from '@chakra-ui/react'
-  import { useUser } from '../../../providers/UserProvider'
+  import { useUser } from '../../../contexts/userContext'
   
   interface ModalErrorLoginProps {
     isOpen: boolean
