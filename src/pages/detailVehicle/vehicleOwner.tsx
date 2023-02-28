@@ -17,6 +17,10 @@ export const VehicleOwnerCard = ({ owner }: IProps) => {
 
   let imageIsValid
 
+  if (owner) {
+    imageIsValid = isValidURL(owner.image)
+  }
+
 
   const handleNavigate = useCallback(() => navigate('/'), [])
 
@@ -36,16 +40,16 @@ export const VehicleOwnerCard = ({ owner }: IProps) => {
               width: '6.25rem',
               height: '6.25rem'
             }}
-            src={''}
+            src={owner.image}
           />
         ) : (
-          <Avatar name="Gabriella" boxSize='35px' />
+            <Avatar name={owner?.name} boxSize='35px' />
         )}
         <Text color="var(--grey1)" fontWeight="600">
-          Gabriella
+        {owner && owner.name}
         </Text>
         <Text w='90%'>
-           Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+           {owner && owner.bio}
         </Text>
         <Button
           bg="var(--grey0)"
