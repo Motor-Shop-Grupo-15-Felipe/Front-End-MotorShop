@@ -1,4 +1,4 @@
-import { ReactNode } from "react"
+import { Dispatch, ReactNode, SetStateAction } from "react"
 
 export interface IProviderProps {
     children: ReactNode
@@ -25,12 +25,13 @@ export interface IProviderProps {
   }
 
   export interface IADUpdateProps {
-    title: string
-    year: string
-    km: number
-    description:string
-    vehicle_type:boolean
-    published: boolean
+    type_of_ad?:boolean
+    title?: string
+    year?: string
+    km?: number
+    description?:string
+    vehicle_type?:boolean
+    published?: boolean
   }
 
   export interface IADListProps {
@@ -40,6 +41,12 @@ export interface IProviderProps {
   export interface UserDataProps {
      ad:IAdData | undefined
      
+
+  }
+
+  export interface IContextValues {
+    setEditAD:() => Promise<void>
+    editAD: (userId: string, data: IADUpdateProps) => Promise<void>
 
   }
   

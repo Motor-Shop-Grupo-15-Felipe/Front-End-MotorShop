@@ -1,10 +1,37 @@
 import { createContext, useContext, useState } from "react"
-import { IProviderProps, UserDataProps } from "../interfaces/ADInterfaces"
+import { IAdData, IContextValues, IProviderProps, UserDataProps } from "../interfaces/ADInterfaces"
 import api  from "../services/api"
 
-const ADSContext = createContext<UserDataProps>({} as UserDataProps)
+export const ADSContext = createContext<IContextValues>({} as IContextValues)
 
-function AdsProvider({children}: IProviderProps){
+export const useADS = () => {
+    const context = useContext(ADSContext)
+
+    if (!context) {
+        throw new Error("useADS must be used within as ContactProvider")
+      }
+      return context
     
 
 }
+
+const ADSProvider = ({ children }: IProviderProps) => {
+   // const { token } = useAuth()
+   const [isLoading, setIsLoading] = useState(false)
+   const [ads, setAds] = useState<IAdData[]>([])
+
+   const loadADS = async () => {
+    setIsLoading(true)
+    await api
+    .get(`/ads`,{
+        headers: {
+            Authorization:// `Bearer ${token}`,
+          },
+    })
+
+
+   }
+    
+
+}
+
