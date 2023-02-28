@@ -12,26 +12,26 @@ import { vehicleMocked } from '../../mocks/mockVehicle';
 
 
 const Home = () => {
-  // useEffect(() => {
-  //   listVehicles()
-  //   getUser()
+  useEffect(() => {
+    listVehicles()
+    getUser()
 
-  // }, [])
+  }, [])
 
-  const vehicles = vehicleMocked
+  const { listVehicles, cars, motorbikes } = UseVehicle()
   const { getUser } = useUser()
 
 
   const motorbikeProps = {
     isOwnerSellerPerfil: false,
-    vehicles: vehicles.type === "moto",
+    vehicles: motorbikes,
     title: 'Motos',
     id: 'motos'
   }
 
   const carProps = {
     isOwnerSellerPerfil: false,
-    vehicles: vehicles.type == "carro",
+    vehicles: cars,
     title: 'Carros',
     id: 'carros'
   }

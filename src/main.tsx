@@ -1,13 +1,13 @@
-import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App";
-import "./index.css";
-import { GlobalStyle } from "./styles/Global";
+import { BrowserRouter } from "react-router-dom";
+import Providers from "./contexts";
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
-  <React.StrictMode>
-    <GlobalStyle>
-      <App />
-    </GlobalStyle>
-  </React.StrictMode>
+
+    <BrowserRouter>
+      <Providers>
+          <App />
+      </Providers>
+    </BrowserRouter>
 );

@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
 import { Flex, Box, useDisclosure } from '@chakra-ui/react'
 
 import { useParams } from 'react-router-dom'
@@ -13,17 +13,24 @@ import { InfoVehicle } from './infoVehicle'
 
 import { UseVehicle } from '../../contexts/vehicleContext'
 import { useAuth } from '../../contexts/authContext'
-import { vehicleMocked } from '../../mocks/mockVehicle'
+import { useComments } from '../../contexts/commentContext'
+import { Comments } from './comments'
+import { CommentMaker } from './commentMaker'
+
 
 const DetailedVehicle = () => {
 
-  // useEffect(() => {
-  //   idVehicle ? listVehicle(idVehicle) : listVehicle(idCarNotFound)
+  const {gettingComments, comments} = useComments()
 
-  // }, [])
+  useEffect(() => {
+    idVehicle ? listVehicle(idVehicle) : listVehicle(idCarNotFound)
+
+    gettingComments(idVehicle)
+
+  }, [])
 
   const { onOpen, onClose, isOpen } = useDisclosure()
-  const vehicle  = vehicleMocked
+  const {listVehicle, vehicle}  = UseVehicle()
   const { verifyAuthenticated } = useAuth()
 
   const params = useParams()
@@ -52,7 +59,8 @@ const DetailedVehicle = () => {
               padding: '5rem 10rem',
               display: 'flex',
               flexDirection: 'row',
-              gap: '2rem'
+              gap: '2rem',
+              width: '100%'
             }}
           >
             <section
@@ -64,6 +72,10 @@ const DetailedVehicle = () => {
               }}
             >
               <InfoVehicle vehicle={vehicle} />
+
+              <Comments comments={comments} />
+              
+              {isAuthenticated && <CommentMaker props={propsCommentMaker}/>}
 
             </section>
             <section style={{ width: '30%' }}>

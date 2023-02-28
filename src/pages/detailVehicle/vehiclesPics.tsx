@@ -2,20 +2,11 @@ import { Card } from "@chakra-ui/card"
 import { Image } from "@chakra-ui/image"
 import { Flex } from "@chakra-ui/layout"
 import { IVehicle } from "../../interface/IVehicle"
-import Car2 from "../../assets/car2.svg"
-import Car1 from "../../assets/car1.svg"
-import Car3 from "../../assets/car3.svg"
 
 interface IProps {
   vehicle: IVehicle
 }
 
-const images = [
-  Car1,
-  Car2,
-  Car3
-
-]
 
 export const VehiclesPics = ({ vehicle }: IProps) => {
   return (
@@ -28,10 +19,10 @@ export const VehiclesPics = ({ vehicle }: IProps) => {
     >
       <strong>Fotos</strong>
       <Flex gap="2rem">
-        {images &&
-          images.map((image, i) => (
+        {vehicle.images &&
+          vehicle.images.map((image, i) => (
             <Flex
-              key={i}
+              key={image.id}
               align="center"
               justifyContent="center"
               bg="var(--grey7)"
@@ -39,7 +30,7 @@ export const VehiclesPics = ({ vehicle }: IProps) => {
               w="90px"
               h="90px"
             >
-              <Image w="120px" h="100px" src={image} />
+              <Image w="120px" h="100px" src={image.image} />
             </Flex>
           ))}
       </Flex>

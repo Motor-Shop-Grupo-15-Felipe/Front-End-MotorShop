@@ -18,8 +18,8 @@ export const InfoVehicle = ({ vehicle }: IProps) => {
       <Card bg={'var(--grey10)'}>
         <CardBody>
           <Image
-            src={`${Car2}`}
-            alt={vehicle.title}
+            src={imagemRoute || ''}
+            alt={vehicle?.title}
             borderRadius="lg"
             width={'25rem'}
             height={'18.75rem'}
@@ -29,7 +29,7 @@ export const InfoVehicle = ({ vehicle }: IProps) => {
       </Card>
       <Card padding={'2rem 4rem'} bg={'var(--grey10)'}>
         <CardBody>
-          <Heading size="md">Mustang</Heading>
+          <Heading size="md">{vehicle?.title}</Heading>
         </CardBody>
 
         <CardFooter display={'flex'} justifyContent={'space-between'}>
@@ -48,7 +48,7 @@ export const InfoVehicle = ({ vehicle }: IProps) => {
                   bg="var(--brand4)"
                   color="var(--brand1)"
                 >
-                  {'2023'}
+                  {vehicle?.year}
                 </Text>
                 <Text
                   padding="0.3rem"
@@ -56,7 +56,7 @@ export const InfoVehicle = ({ vehicle }: IProps) => {
                   marginLeft="2rem"
                   color="var(--brand1)"
                 >
-                  {'0'} KM
+                  {vehicle?.km} KM
                 </Text>
               </div>
 
@@ -72,7 +72,7 @@ export const InfoVehicle = ({ vehicle }: IProps) => {
           </div>
 
           <Text color="var(--grey1)">
-            R${'200.000'}
+            R${vehicle?.price}
           </Text>
         </CardFooter>
       </Card>
@@ -88,7 +88,7 @@ export const InfoVehicle = ({ vehicle }: IProps) => {
           >
             Descrição
           </p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem distinctio iste eius delectus nam commodi impedit? Nihil, consequatur ipsa temporibus, vitae excepturi consequuntur magnam incidunt et, cupiditate qui repellendus. Quo? Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illo excepturi unde praesentium ipsam, velit temporibus aperiam voluptates, architecto veniam possimus alias veritatis pariatur! Autem, vel. Voluptatibus omnis illo placeat nam. Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, sequi. Ipsam, magnam quae. Minus, aut. Laborum autem voluptatem fuga obcaecati est quis, odio, rem fugiat veniam ratione, maxime tempore sapiente?
+          {vehicle?.description}
         </Text>
       </Card>
     </>
