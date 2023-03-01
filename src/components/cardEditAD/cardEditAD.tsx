@@ -1,9 +1,9 @@
 import React, { useContext } from "react";
-import {ADSContext} from "../../context/cardEditADContext"
+import {ADSContext} from "../../contexts/cardEditADContext"
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
-import {  IAdData , IADUpdateProps } from "../../interfaces/ADInterfaces";
+import {  IAdData , IADUpdateProps } from "../../interface/IAD/ADInterfaces";
 import { updateADSchema } from "../../validators";
 import { Button, FormControl, FormLabel, Input, Modal, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader, ModalOverlay, useDisclosure } from "@chakra-ui/react";
 
