@@ -14,7 +14,7 @@ import {
   import { ILoginRequest } from '../pages/login'
   
   import jwt_decode from 'jwt-decode'
-  import {api} from '../api'
+  import api from "../services/api";
   
   interface AuthContextProps {
     children: ReactNode
