@@ -1,18 +1,21 @@
 import React, { useContext } from "react";
-import {ADSContext} from "../../contexts/cardEditADContext"
+
 import { FieldValues, SubmitHandler, useForm } from "react-hook-form"
-import * as yup from "yup";
+
 import { yupResolver } from "@hookform/resolvers/yup";
-import {  IAdData , IADUpdateProps } from "../../interface/IAD/ADInterfaces";
+
 import { updateADSchema } from "../../validators";
 import { Button, FormControl, FormLabel, Input, Modal, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader, ModalOverlay, useDisclosure } from "@chakra-ui/react";
+import { IBodyEditAD, IContextValues  , IAdData} from "../../interface/IAD/ADInterfaces";
+import { VehicleContext } from "../../contexts/vehicleContext";
 
   const EdittADs = ({id,title,year,km,price,plate,description,vehicle_type,published,createdAt}: IAdData) => {
 
     const { isOpen, onOpen, onClose } = useDisclosure()
     const initialRef = React.useRef(null)
     const finalRef = React.useRef(null)
-    const {editAD,setEditAD} = useContext(ADSContext);
+    const {updateAD} = useContext(VehicleContext)
+     
 
     
   
@@ -20,14 +23,14 @@ import { Button, FormControl, FormLabel, Input, Modal, ModalBody, ModalCloseButt
        formState: { errors },
         register,
         handleSubmit,
-      } = useForm<IAdData>({
+      } = useForm({
         resolver: yupResolver(updateADSchema),
       });
 
-      const handleUpdate = (data: IADUpdateProps) => {
-        editAD(id, data)
+      const handleUpdate = (data: IContextValues) => {
+        updateAD(data,id)
         onClose()
-        setEditAD()
+        
       }
 
       return (
@@ -107,7 +110,7 @@ import { Button, FormControl, FormLabel, Input, Modal, ModalBody, ModalCloseButt
                   </ModalBody>
         
                   <ModalFooter>
-                    <Button colorScheme='blue' mr={3}>
+                    <Button colorScheme='blue' mr={3} type="submit">
                     Salvar alterações
                     </Button>
                     <Button onClick={onClose}>Excluir anúncio</Button>

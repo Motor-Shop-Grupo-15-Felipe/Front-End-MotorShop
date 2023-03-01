@@ -10,6 +10,7 @@ import {
 import api from "../services/api";
 import { IVehicle } from "../interface/IVehicle";
 import { IVehicleRequest } from "../interface/IVehicle";
+import { IBodyEditAD, IContextValues } from "../interface/IAD/ADInterfaces";
 
 interface VehicleProps {
   children: ReactNode;
@@ -27,6 +28,7 @@ interface VehicleContextData {
   ) => Promise<void>;
   listVehicles: () => void;
   vehicles: IVehicle[];
+  updateAD: ( data:  IContextValues ,id: string) => Promise<void>;
 }
 
 type CloseModal = () => void;
@@ -46,6 +48,7 @@ export const VehicleProvider = ({ children }: VehicleProps) => {
   const [vehicles, setVehicles] = useState<IVehicle[]>([]);
   const [cars, setCars] = useState<IVehicle[]>([]);
   const [motorbikes, setMotorbikes] = useState<IVehicle[]>([]);
+  const [editAD, setEditAD]  = useState<IVehicle>({ }as IVehicle)
 
   const listVehicle = async (id: string) => {
     await api
@@ -79,6 +82,29 @@ export const VehicleProvider = ({ children }: VehicleProps) => {
     []
   );
 
+  const updateAD = useCallback(async (props: IContextValues) => {
+    const { data, id, onClose } = props
+
+    const values = Object.values(data)
+    const keys = Object.keys(data)
+
+    const body: IBodyEditAD = {}
+
+    keys.forEach((key: string, index) => {
+      if (values[index] !== undefined && values[index] !== '') {
+        body[key] = values[index]
+      }
+    })
+
+    await api
+      .patch(`http://localhost:3000/users/${id}`, body)
+      .then(res => {
+        setEditAD(res.data)
+        onClose()
+      })
+      .catch(err => console.log(err))
+  }, [])
+
   const vehicleContextValues = useMemo(
     () => ({
       listVehicle,
@@ -88,6 +114,7 @@ export const VehicleProvider = ({ children }: VehicleProps) => {
       vehicles,
       cars,
       motorbikes,
+      updateAD
     }),
     [vehicles]
   );

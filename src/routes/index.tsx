@@ -14,7 +14,7 @@ const Router = () => (
   <>
     <GlobalStyle />
     <Routes>
-      <Route path="/" element={<Home />} />
+     
 
       <Route path="/registration" element={<Registration />} />
 
@@ -32,5 +32,5 @@ const Router = () => (
   </>
 )
 
-
+ //<Route path="/" element={<Home />} />//
 export default Router
