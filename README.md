@@ -41,7 +41,7 @@ yarn install
 - To run the server locally, execute the command :
 
 ```
-yarn start
+yarn dev
 ```
 - The app runs at :
  [http://localhost:3000](http://localhost:3000)
