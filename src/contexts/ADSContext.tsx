@@ -9,14 +9,14 @@ export const useADS = () => {
     const context = useContext(ADSContext)
 
     if (!context) {
-        throw new Error("useADS must be used within as ContactProvider")
+        throw new Error("useADS must be used within as ADSProvider")
       }
       return context
     
 
 }
 
-const ADSProvider = ({ children }: IProviderProps) => {
+const ADSProvider = ({ children }: IProviderProps) =>  {
    const { token } = useAuth()
    const [isLoading, setIsLoading] = useState(false)
    const [ads, setAds] = useState<IAdData[]>([])

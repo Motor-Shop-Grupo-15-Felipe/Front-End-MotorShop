@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { ADSContext } from "../../contexts/cardEditADContext";
+import { ADSContext } from "../../contexts/ADSContext";
 import { FieldValues, SubmitHandler, useForm } from "react-hook-form"
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
