@@ -1,8 +1,9 @@
 import { Text } from '@chakra-ui/react'
 import { IPropsVehicleIsActive } from '../../../interface/IVehicle'
 
-export const IsActiveVehicle = ({ props }: IPropsVehicleIsActive) => {
-  const { isActive } = props
+export const IsActiveVehicle = (props: IPropsVehicleIsActive) => {
+  
+  const {isActive} = props
 
   return (
     <>

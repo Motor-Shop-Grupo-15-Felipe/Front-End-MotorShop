@@ -1,7 +1,7 @@
 import { userMocked } from './mockUser'
 
-import carro1 from '../assets/car1.svg'
-import carro2 from '../assets/car2.svg'
+// import  from '../assets/car1.svg'
+// import  from '../assets/car2.svg'
 
 import { IVehicleLeilao } from '../interface/IVehicle'
 
@@ -10,7 +10,7 @@ export const vehiclesList: IVehicleLeilao[] = [
     id: '1',
     time: '01:58:00',
     title: ' Renault Kwid',
-    image: carro1,
+    image: 'g' ,
     description:
       'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem...',
     user: userMocked,
@@ -22,7 +22,7 @@ export const vehiclesList: IVehicleLeilao[] = [
     id: '2',
     time: '01:58:00',
     title: 'Camaro',
-    image: carro2,
+    image: 'g' ,
     description:
       'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem...',
     user: userMocked,

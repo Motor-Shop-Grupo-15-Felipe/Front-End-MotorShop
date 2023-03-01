@@ -7,6 +7,7 @@ import Login from '../pages/login'
 import Registration from '../pages/register'
 import ProfileViewAdmin from '../pages/profileView'
 import DetailedVehicle from '../pages/detailVehicle'
+import AllAdsOwner from '../pages/allAdsOwner'
 
 import { BannerHome } from '../components/bannerHome'
 
@@ -26,6 +27,11 @@ const Router = () => (
         path="/detailedVehicle/:vehicleId"
         element={<DetailedVehicle />}
       />
+
+      <Route
+        path='/allAds/:owner' 
+        element= {<AllAdsOwner/>}/>
+      
 
       <Route path="/banner" element={<BannerHome />} />
     </Routes>

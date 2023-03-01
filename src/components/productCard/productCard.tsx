@@ -7,14 +7,25 @@ import { useNavigate } from "react-router-dom";
 import { useCallback } from "react";
 import { mask } from "remask";
 import { pricePatterns } from "../../utils/masksPatterns";
-import Car2 from "../../assets/car2.svg"
 
 const CardVehicle = ({ props }: IPropsVehicle) => {
+
+  const {
+    title,
+    description,
+    isActive,
+    images,
+    price,
+    km,
+    year,
+    user
+  } = props.vehicle
   
 
   const { isOwnerSellerPerfil } = props;
 
   const navigation = useNavigate();
+  const id = props.vehicle.id
 
   const kmPatternMask = [
     "9",
@@ -29,7 +40,7 @@ const CardVehicle = ({ props }: IPropsVehicle) => {
   ];
 
   const handleClick = useCallback(
-    () => navigation(`/detailedVehicle/${1}`),
+    () => navigation(`/detailedVehicle/${id}`),
     []
   );
   return (
@@ -44,8 +55,8 @@ const CardVehicle = ({ props }: IPropsVehicle) => {
       onClick={handleClick}
       bg="var(--grey10)"
     >
-      <IsActiveVehicle props={{ isActive: true }} />
-      <Image src={Car2} w="100%" objectFit="cover" h="215px" bg="var(--grey7)" />
+      <IsActiveVehicle isActive={ isActive } />
+      <Image src={images[0]?.image} w="100%" objectFit="cover" h="215px" bg="var(--grey7)" />
       <Heading
         noOfLines={1}
         m="15px 0px"
@@ -53,7 +64,7 @@ const CardVehicle = ({ props }: IPropsVehicle) => {
         fontSize="1.6rem"
         color="var(--grey1)"
       >
-       Astra
+       {title}
       </Heading>
       <Text
         noOfLines={2}
@@ -62,9 +73,9 @@ const CardVehicle = ({ props }: IPropsVehicle) => {
         color="var(--grey2)"
         h="45px"
       >
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste reprehenderit aspernatur, cumque obcaecati possimus illo, amet excepturi neque pariatur et quod minima minus voluptatem veritatis delectus quis beatae velit quibusdam!
+        {description}
       </Text>
-      {!isOwnerSellerPerfil && <SellerData name="Gustavo" />}
+      {!isOwnerSellerPerfil && <SellerData name={user.name} />}
 
       <HStack
         marginTop="10px"
@@ -77,10 +88,10 @@ const CardVehicle = ({ props }: IPropsVehicle) => {
       >
         <Flex gap="0.5rem">
         <Box p="4px 8px" bg="var(--brand4)" borderRadius="4px"color="var(--brand1)">
-          <Text>{mask(String(15000), kmPatternMask)} km</Text>
+          <Text>{mask(String(km), kmPatternMask)} km</Text>
         </Box>
         <Box p="4px 8px" bg="var(--brand4)" borderRadius="4px" color="var(--brand1)">
-          <Text>{"2004"}</Text>
+          <Text>{year}</Text>
           </Box>
         </Flex>
 
@@ -90,7 +101,7 @@ const CardVehicle = ({ props }: IPropsVehicle) => {
           fontFamily="Lexend"
           fontSize={["1.4rem", "1.6rem"]}
         >
-          R$ {"15.000,00"}
+          R$ {mask(price, pricePatterns)}
         </Text>
       </HStack>
       {isOwnerSellerPerfil && <AdvertiserOptions />}
