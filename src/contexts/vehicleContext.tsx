@@ -7,7 +7,7 @@ import {
   useMemo,
 } from "react";
 
-import { api } from "../api";
+import api from "../services/api";
 import { IVehicle } from "../interface/IVehicle";
 import { IVehicleRequest } from "../interface/IVehicle";
 
