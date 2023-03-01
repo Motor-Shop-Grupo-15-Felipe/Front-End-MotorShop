@@ -18,6 +18,8 @@ export interface IProviderProps {
     title: string
     year: string
     km: number
+    price:string
+    plate: string;
     description:string
     vehicle_type:boolean
     published: boolean
@@ -47,6 +49,8 @@ export interface IProviderProps {
   export interface IContextValues {
     setEditAD:() => Promise<void>
     editAD: (userId: string, data: IADUpdateProps) => Promise<void>
+    isLoading: boolean
+    updateADS: (ADSid: string, data: IADUpdateProps) => Promise<void>
 
   }
   

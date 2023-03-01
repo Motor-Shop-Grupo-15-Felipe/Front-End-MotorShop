@@ -1,13 +1,13 @@
 import React, { useContext } from "react";
 import {ADSContext} from "../../contexts/cardEditADContext"
-import { useForm } from "react-hook-form";
+import { FieldValues, SubmitHandler, useForm } from "react-hook-form"
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import {  IAdData , IADUpdateProps } from "../../interface/IAD/ADInterfaces";
 import { updateADSchema } from "../../validators";
 import { Button, FormControl, FormLabel, Input, Modal, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader, ModalOverlay, useDisclosure } from "@chakra-ui/react";
 
-  const EdittADs = ({id,title,year,km,description,vehicle_type,published,createdAt}: IAdData) => {
+  const EdittADs = ({id,title,year,km,price,plate,description,vehicle_type,published,createdAt}: IAdData) => {
 
     const { isOpen, onOpen, onClose } = useDisclosure()
     const initialRef = React.useRef(null)
@@ -17,9 +17,9 @@ import { Button, FormControl, FormLabel, Input, Modal, ModalBody, ModalCloseButt
     
   
     const {
+       formState: { errors },
         register,
         handleSubmit,
-        formState: { errors },
       } = useForm<IAdData>({
         resolver: yupResolver(updateADSchema),
       });
@@ -45,7 +45,10 @@ import { Button, FormControl, FormLabel, Input, Modal, ModalBody, ModalCloseButt
                 onClose={onClose}
               >
                 <ModalOverlay />
-                <ModalContent>
+                <ModalContent
+                as='form'
+                onSubmit={handleSubmit(handleUpdate as SubmitHandler<FieldValues>)}
+                >
                   <ModalHeader>Editar anúncio</ModalHeader>
                   <ModalCloseButton />
                   <ModalBody pb={6}>
@@ -57,21 +60,23 @@ import { Button, FormControl, FormLabel, Input, Modal, ModalBody, ModalCloseButt
                     <FormControl mt={4}>
                     <FormLabel>Informações do veículo</FormLabel>
                       <FormLabel>Título</FormLabel>
-                      <Input placeholder='Mercedes Benz A 200 CGI ADVANCE SEDAN Mercedes Benz A 200' />
+                      <Input placeholder='Mercedes Benz A 200 CGI ADVANCE SEDAN Mercedes Benz A 200' {...register("title")}/>
                     </FormControl>
 
                     <FormControl mt={4}>
                       <FormLabel>Ano</FormLabel>
-                      <Input placeholder='2018' />
+                      <Input placeholder='2018'{...register("year")} />
                       <FormLabel>Quilometragem</FormLabel>
-                      <Input placeholder='0' />
+                      <Input placeholder='0' {...register("km")}  />
+                      <FormLabel>Placa</FormLabel>
+                      <Input placeholder='xxt-0000' {...register("plate")}  />
                       <FormLabel>Preço</FormLabel>
-                      <Input placeholder='50.000,00' />
+                      <Input placeholder='50.000,00' {...register("price")} />
                     </FormControl>
 
                     <FormControl mt={4}>
                     <FormLabel>Descrição</FormLabel>
-                      <Input placeholder='Lorem Ipsum is simply dummy text of the printing and typesetting industry.' />
+                      <Input placeholder='Lorem Ipsum is simply dummy text of the printing and typesetting industry.' {...register("description")} />
                     </FormControl>
 
                     <FormControl mt={4}>
