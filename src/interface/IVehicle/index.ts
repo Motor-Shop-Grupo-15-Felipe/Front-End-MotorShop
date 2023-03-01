@@ -9,7 +9,7 @@ export interface IVehicle {
   id: string;
   title: string;
   description: string;
-  isActive?: boolean;
+  isActive: boolean;
   price: string;
   plate: string;
   type: "carro" | "moto";
@@ -67,7 +67,7 @@ export interface IPropsVehicle {
 }
 
 export interface IPropsVehicleIsActive {
-  props: { isActive: boolean };
+  isActive: boolean ;
 }
 
 export interface IVehicleCreated {

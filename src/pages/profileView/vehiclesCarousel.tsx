@@ -59,7 +59,7 @@ export const VehiclesCarousel = ({ props }: IVehiclesCarousel) => {
         {
           <VehicleCard
             key={props.id}
-            props={{ vehicle: props.vehicles, isOwnerSellerPerfil: props.isOwnerSellerPerfil }}
+            props={{ vehicle, isOwnerSellerPerfil }}
           />
         }
 

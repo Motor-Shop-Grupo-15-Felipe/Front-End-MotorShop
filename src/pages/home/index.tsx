@@ -7,9 +7,6 @@ import { Header } from '../../components/header'
 import { Footer } from '../../components/footer'
 import { UseVehicle } from '../../contexts/vehicleContext';
 import { useUser } from '../../contexts/userContext';
-import { vehiclesList } from '../../mocks/mockAuction';
-import { vehicleMocked } from '../../mocks/mockVehicle';
-
 
 const Home = () => {
   useEffect(() => {
