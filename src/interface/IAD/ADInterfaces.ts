@@ -26,15 +26,7 @@ export interface IProviderProps {
     createdAt: Date
   }
 
-  export interface IADUpdateProps {
-    type_of_ad?:boolean
-    title?: string
-    year?: string
-    km?: number
-    description?:string
-    vehicle_type?:boolean
-    published?: boolean
-  }
+  
 
   export interface IADListProps {
     ads:IAdData[]
@@ -46,11 +38,15 @@ export interface IProviderProps {
 
   }
 
+  export interface IBodyEditAD {
+    [key: string]: any
+  }
+
   export interface IContextValues {
-    setEditAD:() => Promise<void>
-    editAD: (userId: string, data: IADUpdateProps) => Promise<void>
-    isLoading: boolean
-    updateADS: (ADSid: string, data: IADUpdateProps) => Promise<void>
+    data: IBodyEditAD
+   id: string
+  onClose: () => void
 
   }
+
   
