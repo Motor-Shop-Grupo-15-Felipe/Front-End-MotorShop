@@ -4,6 +4,7 @@ import { Box, Flex, Heading } from "@chakra-ui/react";
 import { ProductCardAuction } from "../../components/productCard/productCardAuction";
 import VehicleCard from "../../components/productCard/productCard";
 import { NoVehiclesCard } from "../../components/productCard/productCardNoVehicle";
+import CardVehicle from "../../components/productCard/productCard";
 
 interface IVehiclesCarousel {
   props: {
@@ -53,17 +54,19 @@ export const VehiclesCarousel = ({ props }: IVehiclesCarousel) => {
           },
         }}
       >
-        {leilao?.map((vehicle) => (
+        {leilao?.map(vehicle => (
           <ProductCardAuction key={vehicle.id} props={vehicle} />
         ))}
-        {
-          <VehicleCard
-            key={props.id}
+        {vehicles?.map(vehicle => (
+          <CardVehicle
+            key={vehicle.id}
             props={{ vehicle, isOwnerSellerPerfil }}
           />
-        }
+        ))}
 
-        {noVehicles && <NoVehiclesCard />}
+        {noVehicles && (
+          <NoVehiclesCard />
+        )}
       </Flex>
     </Box>
   );

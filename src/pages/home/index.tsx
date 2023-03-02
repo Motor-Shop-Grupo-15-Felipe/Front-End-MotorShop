@@ -8,12 +8,15 @@ import { Footer } from '../../components/footer'
 import { UseVehicle } from '../../contexts/vehicleContext';
 import { useUser } from '../../contexts/userContext';
 
+
 const Home = () => {
   useEffect(() => {
     listVehicles()
     getUser()
 
   }, [])
+
+  const vehiclesList: any = []
 
   const { listVehicles, cars, motorbikes } = UseVehicle()
   const { getUser } = useUser()
