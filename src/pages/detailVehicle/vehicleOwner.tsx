@@ -22,7 +22,7 @@ export const VehicleOwnerCard = ({ owner }: IProps) => {
   }
 
 
-  const handleNavigate = useCallback(() => navigate(`/allAds/${owner.name}`), [])
+  const handleNavigate = useCallback(() => navigate(`/allAds/${owner.id}`), [])
 
   return (
     <Card mt="2rem" padding={['2rem 4rem', '2rem 0rem']} bg={'var(--grey10)'}>

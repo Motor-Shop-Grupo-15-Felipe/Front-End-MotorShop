@@ -11,7 +11,6 @@ export const UserArea = ({ onOpen }: UserAreaProps) => {
 
   const { user } = useUser()
 
-
   let isValidImage = false
 
   if (user?.image) {
@@ -55,7 +54,7 @@ export const UserArea = ({ onOpen }: UserAreaProps) => {
             fontWeight="600"
             fontSize={['1.5rem', '2rem']}
           >
-            {' '}{user.name}{' '}
+            {user.name}
             <Text
               display="inline-block"
               fontWeight="500"

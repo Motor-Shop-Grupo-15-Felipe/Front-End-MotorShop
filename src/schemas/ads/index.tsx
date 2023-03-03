@@ -25,6 +25,9 @@ export const createAdSchema = z.object({
     .min(1, 'Insira um valor válido')
     .transform(price => unMask(price))
     .refine(price => isValidNumber(price, true), 'Aqui'),
+  plate: z
+    .string()
+    .max(7),
   image: z
     .string()
     .refine(imageURL => isValidURL(imageURL), 'Insira uma URL válida'),

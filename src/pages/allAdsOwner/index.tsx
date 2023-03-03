@@ -13,7 +13,7 @@ import { useUser } from '../../contexts/userContext';
 const ProfileViewAdmin = () => {
 
   const { listVehicles, cars, motorbikes } = UseVehicle()
-  const { getUser } = useUser()
+  const { getUser, user } = useUser()
 
   const { isOpen: isUserModalOpen, onOpen: onUserModalOpen, onClose: onUserModalClose } = useDisclosure()
   const { isOpen: isEditUserOpen, onToggle: onEditUserOpen, onClose: onEditUserClose } = useDisclosure()

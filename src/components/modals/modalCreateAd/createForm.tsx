@@ -186,6 +186,12 @@ export const CreateAdForm = ({ onClose }: CreateAdProps) => {
           Tipo de veículo
         </Text>
 
+        <Input
+          label='placa'
+          placeholder='insira a placa do veiculo'
+          {...register('plate')}
+          error={errors.plate}       />
+
         <ButtonGroup w="100%" display="flex" justifyContent="space-between">
           <Button
             content="Carro"

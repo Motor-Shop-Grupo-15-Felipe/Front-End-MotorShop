@@ -75,7 +75,7 @@ const CardVehicle = ({ props }: IPropsVehicle) => {
       >
         {description}
       </Text>
-      {!isOwnerSellerPerfil && <SellerData name={user.name} />}
+      {!isOwnerSellerPerfil && <SellerData name={user?.name} />}
 
       <HStack
         marginTop="10px"
@@ -101,7 +101,7 @@ const CardVehicle = ({ props }: IPropsVehicle) => {
           fontFamily="Lexend"
           fontSize={["1.4rem", "1.6rem"]}
         >
-          R$ {mask(price, pricePatterns)}
+           R$ {price} 
         </Text>
       </HStack>
       {isOwnerSellerPerfil && <AdvertiserOptions />}

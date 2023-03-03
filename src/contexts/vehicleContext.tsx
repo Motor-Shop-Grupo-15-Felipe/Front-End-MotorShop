@@ -52,14 +52,14 @@ export const VehicleProvider = ({ children }: VehicleProps) => {
 
   const listVehicle = async (id: string) => {
     await api
-      .get(`vehicles/${id}`)
+      .get(`ads/${id}`)
       .then((res) => setVehicle(res.data))
       .catch((err) => console.log(err));
   };
 
   const listVehicles = useCallback(async () => {
     await api
-      .get("vehicles")
+      .get("ads/")
       .then((res) => {
         setVehicles([...res.data.carros, ...res.data.motos]);
         setCars(res.data.carros);
@@ -71,7 +71,7 @@ export const VehicleProvider = ({ children }: VehicleProps) => {
   const createVehicle = useCallback(
     async (id: string, data: IVehicleRequest, onClose: CloseModal) => {
       await api
-        .post(`vehicles/${id}`, data)
+        .post(`ads/${id}`, data)
         .then((res) => {
           setVehicles([...vehicles, res.data]);
           listVehicles();

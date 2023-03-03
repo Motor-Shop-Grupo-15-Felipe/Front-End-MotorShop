@@ -15,8 +15,9 @@ const Router = () => (
   <>
     <GlobalStyle />
     <Routes>
-     
 
+      <Route path='/' element={ <Home/>} />
+      
       <Route path="/registration" element={<Registration />} />
 
       <Route path="/login" element={<Login />} />
@@ -30,13 +31,10 @@ const Router = () => (
 
       <Route
         path='/allAds/:owner' 
-        element= {<AllAdsOwner/>}/>
+        element={<AllAdsOwner />} />
       
-
       <Route path="/banner" element={<BannerHome />} />
     </Routes>
   </>
 )
-
- //<Route path="/" element={<Home />} />//
 export default Router
